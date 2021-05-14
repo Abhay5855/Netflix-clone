@@ -1,0 +1,16 @@
+
+
+.navbar__container {
+
+    width:100vw;
+    height: 5vw;
+    background:#2F2F2F;
+    
+}
+ 
+.input {
+
+  height: 50px;
+  border:none;
+  outline: none;
+}
