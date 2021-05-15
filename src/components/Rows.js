@@ -36,6 +36,8 @@ function Rows({ title, fetchUrl, isImageBigger }) {
 
     };
 
+     console.log(movies);
+
 
     const handleClick = (movie) => {
       if(trailerUrl){
@@ -43,8 +45,8 @@ function Rows({ title, fetchUrl, isImageBigger }) {
       }else {
         movieTrailer(movie?.name || '')
         .then((url) => {
-          const urlParamV = new URLSearchParams(new URL(url).search)
-          setTrailerUrl(urlParamV.get("v"));
+          const urlParams = new URLSearchParams(new URL(url).search)
+          setTrailerUrl(urlParams.get("v"));
         })
         .catch((error) => console.log(error))
       }
@@ -55,15 +57,22 @@ function Rows({ title, fetchUrl, isImageBigger }) {
       <div className="row__poster">
         {movies.map((movie) => {
           return (
+            <>
             <img
               onClick={()=>handleClick(movie)}
               className={`row__images ${isImageBigger && "row__imagesLarger"}`}
               key={movie.id}
+              
               src={`${base_url}${
                 isImageBigger ? movie.poster_path : movie.backdrop_path
               }`}
               alt={movie.name}
             ></img>
+
+            <p className="naming">{movie.name}</p>
+
+            </>
+            
           );
         })}
       </div>

@@ -18,12 +18,10 @@ function App() {
         isImageBigger
       />
 
-      <Rows title="Trending" fetchUrl={requests.fetchTrending} />
+      <Rows title="Trending" fetchUrl={requests.fetchTrending } />
       <Rows title="Top Rated" fetchUrl={requests.fetchTopRated} />
-      <Rows title="Comedy" fetchUrl={requests.fetchComedyMovies} />
-      <Rows title="Romance" fetchUrl={requests.fetchRomanceMovies} />
       <Rows title="Horror" fetchUrl={requests.fetchHorrorMovies} />
-      <Rows title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+     
     </div>
   );
 }
